@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MangoBerryEstate — Pick-Your-Own Orchard, India</title>
+<link rel="stylesheet" href="styles.css?v=3" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">🥭</span>
+        <span class="brand-name">MangoBerry<span class="accent">Estate</span></span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#pick">Pick</a>
+        <a href="#book">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Dehradun, Uttarakhand</p>
+      <h1>Pick your own mangoes, litchis &amp; seasonal vegetables.</h1>
+      <p class="lede">A working family orchard. Walk the rows, pluck fruit straight off the tree, weigh your basket on the way out — and pay only for what you pick.</p>
+      <a href="#book" class="btn btn-primary">Book a Picking Slot</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container two-col">
+      <div>
+        <h2>A real orchard. Straight from the tree.</h2>
+        <p>MangoBerryEstate has been farmed by the same family for four generations. We grow Langda, Dussheri and Chausa mangoes, fresh litchis in early June, and rotate seasonal vegetables in the kitchen garden — okra, tomatoes, brinjals, gourds, leafy greens.</p>
+        <p>Booking a slot reserves a guided basket for your group. Our team walks you through the rows, shows you which fruits are ready, and weighs your harvest at the gate.</p>
+      </div>
+      <ul class="facts">
+        <li><strong>4</strong><span>generations farming</span></li>
+        <li><strong>✓</strong><span>multiple crops to pick</span></li>
+        <li><strong>6</strong><span>daily slots</span></li>
+        <li><strong>1kg</strong><span>included per picker</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pick" class="stays">
+    <div class="container">
+      <h2>Choose what you want to pick</h2>
+      <p class="muted">Slot fee includes a guided walk, a basket, and the first 1 kg. Anything extra is weighed at the gate.</p>
+      <div class="cards">
+        <article class="card" data-experience="mango" data-price="1100">
+          <img class="card-img" src="mango-picking.jpeg" alt="Ripe yellow mangoes" loading="lazy" />
+          <div class="card-body">
+            <h3>Mango Picking</h3>
+            <p>Langda, Dussheri &amp; Chausa · mid June – mid July</p>
+            <p class="extra muted small">Extra fruit: ₹350/kg</p>
+            <p class="price">₹1,100 <span>/ person</span></p>
+          </div>
+        </article>
+        <article class="card" data-experience="litchi" data-price="1100">
+          <img class="card-img" src="litchi-picking.jpeg" alt="Fresh red litchis" loading="lazy" />
+          <div class="card-body">
+            <h3>Litchi Picking</h3>
+            <p>1 – 15 June</p>
+            <p class="extra muted small">Extra fruit: ₹280/kg</p>
+            <p class="price">₹1,100 <span>/ person</span></p>
+          </div>
+        </article>
+        <article class="card" data-experience="veggies" data-price="1100">
+          <img class="card-img" src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800&q=80&auto=format&fit=crop" alt="Assortment of fresh seasonal vegetables" loading="lazy" />
+          <div class="card-body">
+            <h3>Seasonal Vegetables</h3>
+            <p>Kitchen garden · Year-round</p>
+            <p class="extra muted small">Pay by kg: ₹80/kg at the gate</p>
+            <p class="price">₹1,100 <span>/ person</span></p>
+          </div>
+        </article>
+        <article class="card premium" data-experience="basket" data-price="3000">
+          <img class="card-img" src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=800&q=80&auto=format&fit=crop" alt="Mixed basket of fresh fruits and vegetables" loading="lazy" />
+          <div class="card-body">
+            <span class="badge">Premium</span>
+            <h3>MangoBerry Premium Basket</h3>
+            <p>1 kg mango + 1 kg litchi + 1 kg seasonal vegetables — pre-packed, ready to take home.</p>
+            <p class="extra muted small">Pick 2 varieties: ₹2,000 · All 3 varieties: ₹3,000</p>
+            <p class="price">₹3,000 <span>/ basket</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="book">
+    <div class="container">
+      <h2>Reserve your picking slot</h2>
+      <p class="muted">Pay your slot fee with UPI, Paytm, or Google Pay. Pay-by-weight is settled at the gate.</p>
+
+      <form id="booking-form" class="booking">
+        <div class="row">
+          <label>
+            <span>Full name</span>
+            <input type="text" name="name" required placeholder="Aarav Sharma" />
+          </label>
+          <label>
+            <span>Phone (with country code)</span>
+            <input type="tel" name="phone" required placeholder="+91 98765 43210" pattern="[+0-9 ]{10,}" />
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="aarav@example.com" />
+          </label>
+          <label>
+            <span>Crop to pick</span>
+            <select name="experience" required>
+              <option value="">Select…</option>
+              <option value="mango" data-price="1100">Mango Picking — ₹1,100/person</option>
+              <option value="litchi" data-price="1100">Litchi Picking — ₹1,100/person</option>
+              <option value="veggies" data-price="1100">Seasonal Vegetables — ₹1,100/person</option>
+              <option value="basket" data-price="3000">MangoBerry Premium Basket — from ₹2,000</option>
+            </select>
+          </label>
+        </div>
+        <div class="row" id="basket-options-row" hidden>
+          <label>
+            <span>Basket varieties</span>
+            <select name="basketVarieties">
+              <option value="3">All 3 varieties (mango + litchi + vegetables) — ₹3,000</option>
+              <option value="2">Pick 2 varieties — ₹2,000</option>
+            </select>
+          </label>
+          <label id="basket-pick-row" hidden>
+            <span>Which 2 varieties?</span>
+            <select name="basketPick">
+              <option value="mango+litchi">Mango + Litchi</option>
+              <option value="mango+veggies">Mango + Seasonal Vegetables</option>
+              <option value="litchi+veggies">Litchi + Seasonal Vegetables</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            <span>Visit date</span>
+            <input type="date" name="visitdate" required />
+          </label>
+          <label>
+            <span>Time slot</span>
+            <select name="slot" required>
+              <option value="">Select…</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+            </select>
+          </label>
+          <label>
+            <span>Pickers</span>
+            <input type="number" name="pickers" min="1" max="20" value="2" required />
+          </label>
+        </div>
+
+        <div class="summary" id="summary">
+          <div class="summary-row"><span>Pickers</span><strong id="nights">—</strong></div>
+          <div class="summary-row"><span>Slot fee</span><strong id="rate">—</strong></div>
+          <div class="summary-row"><span>Convenience fee (5%)</span><strong id="tax">—</strong></div>
+          <div class="summary-row total"><span>Pay now</span><strong id="total">—</strong></div>
+          <p class="muted small" style="margin-top:10px">Pay-by-weight (anything over the included 1 kg per person) is settled in cash or UPI at the gate.</p>
+        </div>
+
+        <fieldset class="payments">
+          <legend>Payment method</legend>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="upi" checked />
+            <div>
+              <span class="pay-title">UPI</span>
+              <span class="pay-sub">Any UPI app — PhonePe, BHIM, Amazon Pay</span>
+            </div>
+            <span class="pay-logo upi">UPI</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="paytm" />
+            <div>
+              <span class="pay-title">Paytm</span>
+              <span class="pay-sub">Pay via Paytm wallet or Paytm UPI</span>
+            </div>
+            <span class="pay-logo paytm">Paytm</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="gpay" />
+            <div>
+              <span class="pay-title">Google Pay</span>
+              <span class="pay-sub">Tez · GPay UPI</span>
+            </div>
+            <span class="pay-logo gpay">G Pay</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-block">Pay &amp; Confirm Slot</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Payment modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <h3 id="modal-title">Complete your payment</h3>
+      <p id="modal-amount" class="modal-amount"></p>
+      <div id="modal-body"></div>
+      <p class="muted small">After paying, your slot confirmation will arrive on email and SMS within 5 minutes.</p>
+    </div>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="container two-col">
+      <div>
+        <h2>Visit us</h2>
+        <p>MangoBerryEstate<br/>Dehradun<br/>Uttarakhand 248001, India</p>
+        <p>📞 +91 74099 49477<br/>💬 WhatsApp: +91 99717 74639<br/>📷 <a href="https://instagram.com/MangoberryEstate" target="_blank" rel="noopener">@MangoberryEstate</a></p>
+        <p>📍 <a href="https://maps.app.goo.gl/nSN3dFxf56QxSjDN8?g_st=iw" target="_blank" rel="noopener">View on Google Maps</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> MangoBerryEstate · Made in India 🇮🇳</span>
+      <span class="muted small">All payments are processed in INR (₹).</span>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
