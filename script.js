@@ -4,16 +4,16 @@ const PRICES = {
   mango: 1100,
   litchi: 1100,
   veggies: 1100,
-  basket: 3000, // baseline; basket also supports a 2-variety option at ₹2,000
+  basket: 2000,         // Pick 2 varieties
+  'basket-deluxe': 3000, // Pick all 3 varieties
 };
-
-const BASKET_PRICES = { '2': 2000, '3': 3000 };
 
 const EXPERIENCE_NAMES = {
   mango: 'Mango Picking',
   litchi: 'Litchi Picking',
   veggies: 'Seasonal Vegetable Picking',
-  basket: 'MangoBerry Premium Basket',
+  basket: 'MangoBerry Premium Basket — Pick 2 varieties',
+  'basket-deluxe': 'MangoBerry Premium Basket — Pick all 3 varieties',
 };
 
 // Demo merchant UPI ID — replace with your real one in production
@@ -61,13 +61,8 @@ function calc() {
   const experience = form.experience.value;
   const pickers = parseInt(form.pickers.value, 10);
   if (!experience || !pickers || pickers < 1) return null;
-  let rate;
-  if (experience === 'basket') {
-    const v = form.basketVarieties ? form.basketVarieties.value : '3';
-    rate = BASKET_PRICES[v] || 3000;
-  } else {
-    rate = PRICES[experience];
-  }
+  const rate = PRICES[experience];
+  if (!rate) return null;
   const subtotal = rate * pickers;
   const fee = Math.round(subtotal * 0.05);
   const total = subtotal + fee;
@@ -90,17 +85,14 @@ function updateSummary() {
 }
 
 function toggleBasketOptions() {
-  const row = document.getElementById('basket-options-row');
   const pickRow = document.getElementById('basket-pick-row');
-  if (!row) return;
-  const isBasket = form.experience.value === 'basket';
-  row.hidden = !isBasket;
-  if (isBasket && pickRow) {
-    pickRow.hidden = form.basketVarieties.value !== '2';
-  }
+  const exp = form.experience.value;
+  const isBasket = exp === 'basket';            // Pick 2 varieties → ask which 2
+  const isAnyBasket = isBasket || exp === 'basket-deluxe';
+  if (pickRow) pickRow.hidden = !isBasket;
   // Pickers field re-labels itself in basket mode (per-basket instead of per-picker)
   const pickersLabel = form.pickers.closest('label')?.querySelector('span');
-  if (pickersLabel) pickersLabel.textContent = isBasket ? 'Baskets' : 'Pickers';
+  if (pickersLabel) pickersLabel.textContent = isAnyBasket ? 'Baskets' : 'Pickers';
 }
 
 ['change', 'input'].forEach(evt => {
