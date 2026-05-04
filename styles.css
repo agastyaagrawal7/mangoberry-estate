@@ -205,6 +205,10 @@ p { line-height: 1.65; }
   background: #ead8c2;
   filter: none;
 }
+.card-img.card-img-full {
+  object-fit: contain;
+  background: #fffaf3;
+}
 .card.premium {
   border: 2px solid var(--mango);
   position: relative;
