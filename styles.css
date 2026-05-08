@@ -206,7 +206,10 @@ p { line-height: 1.65; }
   filter: none;
 }
 .card-img.card-img-full {
+  height: auto;
+  max-height: none;
   object-fit: contain;
+  aspect-ratio: auto;
   background: #fffaf3;
 }
 .card.premium {
