@@ -67,7 +67,7 @@ p { line-height: 1.65; }
   font-size: 1.5rem;
   font-weight: 700;
 }
-.brand-mark { font-size: 1.6rem; }
+.brand-mark { width: 32px; height: 32px; display: inline-block; vertical-align: middle; }
 .accent { color: var(--berry); }
 .nav nav { display: flex; gap: 28px; }
 .nav nav a {
@@ -86,9 +86,8 @@ p { line-height: 1.65; }
   display: flex;
   align-items: center;
   background:
-    linear-gradient(135deg, rgba(42, 26, 20, 0.55), rgba(139, 30, 63, 0.35)),
-    radial-gradient(circle at 30% 20%, #f5a524 0%, transparent 40%),
-    radial-gradient(circle at 70% 70%, #8b1e3f 0%, transparent 45%),
+    linear-gradient(135deg, rgba(42, 26, 20, 0.45), rgba(139, 30, 63, 0.25)),
+    url("hero-illustration.svg") center/cover no-repeat,
     linear-gradient(180deg, #2a1a14 0%, #5c0f29 100%);
   color: #fff;
   padding: 80px 24px;
