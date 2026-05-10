@@ -449,4 +449,26 @@ footer {
   .row, .row:nth-of-type(3) { grid-template-columns: 1fr; }
   .nav nav { gap: 16px; }
   .nav nav a { font-size: 0.85rem; }
+  /* Hero on mobile — show illustration above text so the whole scene is visible */
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto;
+    padding: 0 0 48px;
+    background:
+      linear-gradient(180deg, #2a1a14 0%, #5c0f29 100%);
+  }
+  .hero::before {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: url("hero-illustration.svg") center/contain no-repeat;
+  }
+  .hero-content {
+    padding: 24px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 1.8rem; }
+  .lede { font-size: 1rem; }
 }
