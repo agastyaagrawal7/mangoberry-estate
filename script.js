@@ -117,14 +117,10 @@ function buildUpiLink(amount, txnNote, pa) {
 }
 
 function qrSvg(text) {
+  // Real GPay/UPI QR code for mangliknivedita@okhdfcbank
   return `
     <div class="qr-box">
-      <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-label="QR placeholder">
-        <rect width="180" height="180" fill="#fff"/>
-        ${generateFakeQr(text)}
-        <rect x="78" y="78" width="24" height="24" fill="#fff"/>
-        <text x="90" y="96" text-anchor="middle" font-size="12" font-family="serif" fill="#8b1e3f" font-weight="700">🥭</text>
-      </svg>
+      <img src="payment-qr.jpeg" alt="Scan to pay with any UPI app" style="width:220px;height:auto;display:block;margin:0 auto;border-radius:12px;" />
     </div>
   `;
 }
