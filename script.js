@@ -1,11 +1,11 @@
 // MangoBerryEstate booking + payment script
 
 const PRICES = {
-  mango: 1100,
-  litchi: 1100,
-  veggies: 1100,
-  basket: 2000,         // Pick 2 varieties
-  'basket-deluxe': 3000, // Pick all 3 varieties
+  mango: 800,
+  litchi: 800,
+  veggies: 800,
+  basket: 1200,         // Pick 2 varieties
+  'basket-deluxe': 1500, // Pick all 3 varieties
 };
 
 const EXPERIENCE_NAMES = {
