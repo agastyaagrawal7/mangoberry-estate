@@ -104,16 +104,20 @@ function toggleBasketOptions() {
 
 toggleBasketOptions();
 
-// Build UPI deep link (works on mobile to launch any UPI app)
-function buildUpiLink(amount, txnNote, pa) {
+// Build a UPI deep link. `scheme` lets us target a specific app:
+//   upi://      → generic (OS picks the default UPI app)
+//   tez://upi/  → Google Pay (Tez)
+//   paytmmp://  → Paytm
+// All pay to the same merchant VPA regardless of app.
+function buildUpiLink(amount, txnNote, scheme) {
   const params = new URLSearchParams({
-    pa: pa || MERCHANT_UPI,
+    pa: MERCHANT_UPI,
     pn: MERCHANT_NAME,
     am: amount.toFixed(2),
     cu: 'INR',
     tn: txnNote,
   });
-  return 'upi://pay?' + params.toString();
+  return (scheme || 'upi://pay?') + params.toString();
 }
 
 function qrSvg(text) {
@@ -154,9 +158,9 @@ function openModal(method, amount, bookingId) {
   modalAmount.textContent = inr(amount);
 
   const note = `Slot ${bookingId}`;
-  const upiLink = buildUpiLink(amount, note);
 
   if (method === 'upi') {
+    const upiLink = buildUpiLink(amount, note, 'upi://pay?');
     modalTitle.textContent = 'Scan with any UPI app';
     modalBody.innerHTML = `
       ${qrSvg(upiLink)}
@@ -166,7 +170,7 @@ function openModal(method, amount, bookingId) {
       <a class="pay-link-btn" href="${upiLink}">Open UPI app</a>
     `;
   } else if (method === 'paytm') {
-    const paytmLink = buildUpiLink(amount, note);
+    const paytmLink = buildUpiLink(amount, note, 'paytmmp://pay?');
     modalTitle.textContent = 'Pay with Paytm';
     modalBody.innerHTML = `
       ${qrSvg(paytmLink)}
@@ -176,7 +180,7 @@ function openModal(method, amount, bookingId) {
       <a class="pay-link-btn" href="${paytmLink}">Open Paytm</a>
     `;
   } else if (method === 'gpay') {
-    const gpayLink = buildUpiLink(amount, note);
+    const gpayLink = buildUpiLink(amount, note, 'tez://upi/pay?');
     modalTitle.textContent = 'Pay with Google Pay';
     modalBody.innerHTML = `
       ${qrSvg(gpayLink)}
