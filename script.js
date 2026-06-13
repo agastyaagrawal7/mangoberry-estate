@@ -169,16 +169,6 @@ function openModal(method, amount, bookingId) {
       <br/>
       <a class="pay-link-btn" href="${upiLink}">Open UPI app</a>
     `;
-  } else if (method === 'paytm') {
-    const paytmLink = buildUpiLink(amount, note, 'paytmmp://pay?');
-    modalTitle.textContent = 'Pay with Paytm';
-    modalBody.innerHTML = `
-      ${qrSvg(paytmLink)}
-      <p>Scan with Paytm, or pay to</p>
-      <div class="upi-id">${MERCHANT_UPI}</div>
-      <br/>
-      <a class="pay-link-btn" href="${paytmLink}">Open Paytm</a>
-    `;
   } else if (method === 'gpay') {
     const gpayLink = buildUpiLink(amount, note, 'tez://upi/pay?');
     modalTitle.textContent = 'Pay with Google Pay';
