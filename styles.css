@@ -281,6 +281,8 @@ p { line-height: 1.65; }
   background: #fff;
   transition: border-color 0.15s;
 }
+/* Hide the native mm/dd/yyyy format hint until the date field is focused or filled */
+input[type="date"].is-empty:not(:focus)::-webkit-datetime-edit { color: transparent; }
 .booking input:focus,
 .booking select:focus {
   outline: none;

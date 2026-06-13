@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
-<link rel="stylesheet" href="styles.css?v=11" />
+<link rel="stylesheet" href="styles.css?v=12" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -127,8 +127,8 @@
         </div>
         <div class="row">
           <label>
-            <span>Phone (with country code)</span>
-            <input type="tel" name="phone" required pattern="[+0-9 ]{10,}" />
+            <span>Phone number</span>
+            <input type="tel" name="phone" required pattern="[+0-9 ]{10,}" value="+91 " />
           </label>
           <label>
             <span>Email</span>
@@ -177,7 +177,7 @@
           </label>
           <label>
             <span>Pickers</span>
-            <input type="number" name="pickers" min="1" max="20" value="2" required />
+            <input type="number" name="pickers" min="1" max="20" required />
           </label>
         </div>
 

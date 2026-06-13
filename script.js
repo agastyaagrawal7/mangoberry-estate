@@ -34,13 +34,16 @@ const modalClose = document.getElementById('modal-close');
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Default visit date = tomorrow
-(function setDefaultDate() {
+// Prevent selecting past dates (field starts empty) and hide the
+// native mm/dd/yyyy format hint while the field is empty.
+(function setupDateField() {
+  const d = form.visitdate;
   const today = new Date();
-  const tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
-  form.visitdate.min = today.toISOString().split('T')[0];
-  form.visitdate.value = tomorrow.toISOString().split('T')[0];
+  d.min = today.toISOString().split('T')[0];
+  const sync = () => d.classList.toggle('is-empty', !d.value);
+  sync();
+  d.addEventListener('input', sync);
+  d.addEventListener('change', sync);
 })();
 
 // Card click → select experience in form
