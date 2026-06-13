@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
-<link rel="stylesheet" href="styles.css?v=10" />
+<link rel="stylesheet" href="styles.css?v=11" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -117,20 +117,26 @@
       <form id="booking-form" class="booking">
         <div class="row">
           <label>
-            <span>Full name</span>
-            <input type="text" name="name" required placeholder="Aarav Sharma" />
+            <span>First name</span>
+            <input type="text" name="firstName" required />
           </label>
           <label>
-            <span>Phone (with country code)</span>
-            <input type="tel" name="phone" required placeholder="+91 98765 43210" pattern="[+0-9 ]{10,}" />
+            <span>Last name</span>
+            <input type="text" name="lastName" required />
           </label>
         </div>
         <div class="row">
           <label>
-            <span>Email</span>
-            <input type="email" name="email" required placeholder="aarav@example.com" />
+            <span>Phone (with country code)</span>
+            <input type="tel" name="phone" required pattern="[+0-9 ]{10,}" />
           </label>
           <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <div class="row">
+          <label style="grid-column: 1 / -1;">
             <span>Crop to pick</span>
             <select name="experience" required>
               <option value="">Select…</option>
