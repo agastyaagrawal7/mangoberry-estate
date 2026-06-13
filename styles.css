@@ -104,6 +104,18 @@ p { line-height: 1.65; }
   margin: 0 0 16px;
   font-weight: 600;
 }
+.promo-tag {
+  display: inline-block;
+  background: var(--mango);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  padding: 12px 26px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(245, 165, 36, 0.45);
+}
 .hero h1 { color: #fff; }
 .lede {
   font-size: 1.15rem;
